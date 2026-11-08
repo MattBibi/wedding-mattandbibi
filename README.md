@@ -1,20 +1,18 @@
 # Bibi & Matt wedding website
 
-Public site: https://mattbibi.github.io/wedding-mattandbibi/
+Public site: https://wedding.mattandbibi.com/
 
-Planned custom domain: wedding.mattandbibi.com. Its DNS record was absent at publication. Add a Route53 CNAME record named `wedding` targeting `mattbibi.github.io`, then configure the custom domain in GitHub Pages settings. GitHub will recreate `CNAME`. Do not enable the domain before DNS exists, because that redirects the working Pages URL to an unresolved host.
-
-A static, responsive wedding website for Porto Alegre, Brazil, December 2028. Exact date and ceremony time remain unconfirmed.
+A static, responsive wedding website for Porto Alegre, Brazil, December 2027. Exact date and ceremony time remain unconfirmed.
 
 ## Editing and preview
 Open a local HTTP server from this folder, for example `python -m http.server 8080`.
 The site uses plain HTML, CSS and JavaScript. No build is required.
-GitHub Pages serves the `main` branch root. The custom-domain `CNAME` is deliberately absent until DNS is configured.
+GitHub Pages serves the `main` branch root. The `CNAME` file preserves the custom domain.
 
 - `index.html`: content and accessible form structure
 - `styles.css`: responsive layout, two visual themes and animated envelope
 - `site.js`: Brazilian Portuguese and English translations, saved preferences, form behavior
-- `assets/waterfront-harmony.png`: custom illustrated hero; the terrace is illustrative, not a confirmed reception venue
+- `assets/waterfront-harmony-2027.png`: custom illustrated hero; the terrace is illustrative, not a confirmed reception venue
 
 ## RSVP delivery: owner activation required
 The embedded form uses FormSubmit. It sends to `souzabibi@hotmail.com` and CCs `matt@mattcarolan.net`.
@@ -32,4 +30,6 @@ No test RSVP is automatically sent by CI. Browser tests intercept all submission
 GitHub Actions checks both languages and visual themes, preference persistence, desktop and mobile overflow, envelope accessibility, and success/failure/activation form states.
 
 ## Known planning placeholders
-Exact wedding date, ceremony time, reception venue, accommodation suggestions and further travel plans await confirmation.
+Exact wedding date, ceremony time, accommodation suggestions and practical travel information await confirmation. The announcement is for the church wedding only. The family table in the artwork is symbolic.
+
+The RSVP envelope stays sealed on scroll. Clicking or keyboard-activating the wax seal opens the flap, then reveals the letter. Reduced-motion preferences are respected.

@@ -40,7 +40,9 @@ for (const width of [360,390,768,1440]) {
   for(const lang of ['en','pt']){
    await page.locator('[data-language='+lang+']').click();
    await page.locator('#rsvp').scrollIntoViewIfNeeded();
+   if(await page.locator('#open-letter').isVisible()) await page.locator('#open-letter').click();
    await expect(page.locator('#envelope-stage')).toHaveClass(/is-open/);
+   await expect(page.locator('#rsvp-letter')).not.toHaveAttribute('inert','');
    await page.waitForTimeout(1100);
    expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),lang+' overflow at '+width).toBe(true);
    await expect(page.locator('#guest-name')).toBeVisible();
@@ -50,12 +52,13 @@ for (const width of [360,390,768,1440]) {
 }
 async function fillRsvp(page){
  await page.goto('/');await page.locator('#rsvp').scrollIntoViewIfNeeded();
- await expect(page.locator('#envelope-stage')).toHaveClass(/is-open/);
+ await page.locator('#open-letter').click();
+   await expect(page.locator('#envelope-stage')).toHaveClass(/is-open/);
+   await expect(page.locator('#rsvp-letter')).not.toHaveAttribute('inert','');
  await page.locator('#guest-name').fill('Website test - never emailed');
  await page.locator('#guest-email').fill('test@example.com');
  await page.locator('input[name=Attendance][value=Yes]').check();
  await page.locator('#guest-count').selectOption('2');
- await page.locator('#dietary').fill('Vegetarian');
 }
 test('RSVP submits in-page to the configured recipients without sending test mail',async({page})=>{
  let payload;
@@ -68,7 +71,8 @@ test('RSVP submits in-page to the configured recipients without sending test mai
  await expect(page.locator('#rsvp-success')).toBeVisible();
  expect(payload._cc).toBe('matt@mattcarolan.net');
  expect(payload['Number of guests']).toBe('2');
- expect(payload['Dietary requirements']).toBe('Vegetarian');
+ expect(payload['Dietary requirements']).toBeUndefined();
+ expect(payload['Wedding date']).toContain('2027');
 });
 test('service failure keeps the answers and offers a retry',async({page})=>{
  await page.route('https://formsubmit.co/ajax/**',route=>route.fulfill({status:503,contentType:'application/json',body:'{"success":false}'}));
@@ -96,6 +100,19 @@ test('declining records zero guests and preserves form accessibility',async({pag
 test('reduced motion opens envelope and permits keyboard form use',async({page})=>{
  await page.emulateMedia({reducedMotion:'reduce'});
  await page.goto('/');await page.locator('#rsvp').scrollIntoViewIfNeeded();
+ await page.locator('#open-letter').focus();await page.keyboard.press('Enter');
  await expect(page.locator('#rsvp-letter')).not.toHaveAttribute('inert','');
  await page.locator('#guest-name').focus();await expect(page.locator('#guest-name')).toBeFocused();
 });
+ test('scroll leaves letter sealed until the wax seal is activated',async({page})=>{
+ await page.goto('/');await page.locator('#rsvp').scrollIntoViewIfNeeded();
+ await page.waitForTimeout(1200);
+ await expect(page.locator('#envelope-stage')).not.toHaveClass(/is-open/);
+ await expect(page.locator('#rsvp-letter')).toHaveAttribute('inert','');
+ await expect(page.locator('#open-letter')).toHaveText(/Click to Open/);
+ await expect(page.locator('#dietary')).toHaveCount(0);
+ await expect(page).toHaveTitle(/2027/);
+ await page.locator('#open-letter').click();
+ await expect(page.locator('#rsvp-letter')).not.toHaveAttribute('inert','');
+ await expect(page.locator('#guest-name')).toBeFocused();
+ });
