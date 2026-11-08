@@ -5,17 +5,19 @@ html[data-theme=australia] .hero .hero-art-au{opacity:1}
 .sky-glow{position:absolute;inset:0;background:linear-gradient(180deg,#db75620b,transparent 55%);transition:background 1s}
 html[data-theme=australia] .sky-glow{background:radial-gradient(ellipse at 70% 45%,#f9bb5320,transparent 52%)}
 .scene-bird{position:absolute;width:8%;height:auto;filter:drop-shadow(0 2px 3px #190c2733);transition:opacity .7s,transform .9s}
-.bird-brasil{left:17%;top:30%;transform:rotate(-12deg);animation:bird-hover 3s ease-in-out infinite}
+.bird-brasil{left:11.1%;top:37.2%;width:9%;transform-origin:11.25% 26.875%;animation:bird-feed 3s ease-in-out infinite}
 .bird-australia{right:7%;top:43%;width:8.5%;opacity:0;transform:translateY(12px)}
 html[data-theme=australia] .bird-brasil{opacity:0}
 html[data-theme=australia] .bird-australia{opacity:1;transform:none}
-@keyframes bird-hover{50%{transform:translateY(-7px) rotate(-8deg)}}
-.flight-path{position:absolute;left:67%;right:1%;top:27%;height:10%;opacity:0;transition:opacity .6s;overflow:hidden}
+/* Pivot at the beak so it stays in the orchid while the bird feeds. */
+@keyframes bird-feed{0%,100%{transform:rotate(-.6deg)}50%{transform:rotate(.6deg)}}
+.flight-path{position:absolute;left:66%;right:16%;top:33%;height:8%;opacity:0;transition:opacity .6s;overflow:hidden}
 html[data-theme=australia] .flight-path{opacity:1}
-.sky-plane{position:absolute!important;width:19%!important;height:auto!important;top:35%;left:50%;filter:drop-shadow(0 1px 2px #183c4760);animation:flight 22s ease-in-out infinite;animation-play-state:paused}
+.sky-plane{position:absolute!important;width:27%!important;height:auto!important;top:40%;left:0;opacity:0;filter:drop-shadow(0 1px 2px #183c4760);animation:flight 22s linear infinite;animation-play-state:paused}
 html[data-theme=australia] .sky-plane{animation-play-state:running}
 .flight-path>span{display:none}
-@keyframes flight{0%,100%{transform:translate(-200%,40%) scale(.8);opacity:.2}15%{opacity:.85}85%{opacity:.85}95%{transform:translate(260%,-60%) scale(.65);opacity:0}}
+/* Fade completely within open sky, then pause invisibly before repeating. */
+@keyframes flight{0%{left:0;opacity:0}12%{left:12%;opacity:.85}55%{left:54%;opacity:.85}74%,100%{left:73%;opacity:0}}
 .envelope-lining{background-color:#633047;background-image:url('./assets/lining-brasil.svg');background-size:105px;transition:background-color .7s}
 html[data-theme=australia] .envelope-lining{background-color:#264c45;background-image:url('./assets/lining-australia.svg');background-size:110px}
 .envelope-lid::after{content:"";position:absolute;inset:8px;background:linear-gradient(#f7e8d2c9,#f7e8d2dd),url('./assets/lining-brasil.svg') center/90px;clip-path:polygon(0 0,100% 0,50% 94%);opacity:.55}
@@ -46,12 +48,11 @@ html[data-theme=australia] .postmark-australia{display:block}
 @media(max-width:560px){
  .hero .hero-art-au{inset:auto 0 0;height:auto}
  .scene-effects{inset:auto 0 0;aspect-ratio:1586/992}
- .scene-bird{width:11%}.bird-australia{width:11%;top:39%;right:7%}.bird-brasil{left:18%;top:29%}
- .sky-plane{width:24%!important}
+ .bird-australia{width:11%;top:39%;right:7%}
  .envelope-trigger.wax-seal,html[data-theme=australia] .envelope-trigger.wax-seal{width:116px;height:116px;min-width:116px;bottom:45px;padding:22px 17px 27px;gap:4px}
  .wax-seal .seal-monogram,html[data-theme=australia] .wax-seal .seal-monogram{font-size:22px}
  .wax-seal .seal-words,html[data-theme=australia] .wax-seal .seal-words{font-size:10px;max-width:71px}
  .envelope-postage{width:55px;height:69px;right:15px;bottom:17px}
  .postmark{width:86px;height:62px;left:13px;bottom:21px;font-size:7px}.postmark small{font-size:8px}
 }
-@media(prefers-reduced-motion:reduce){.scene-bird,.sky-plane,.flying-petal{animation:none!important}.sky-plane{left:50%;top:35%;opacity:1}#petal-transition{display:none}}
+@media(prefers-reduced-motion:reduce){.scene-bird,.sky-plane,.flying-petal{animation:none!important}.sky-plane{left:35%;top:40%;opacity:.85}#petal-transition{display:none}}
