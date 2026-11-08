@@ -12,7 +12,8 @@
 <link rel="preload" as="image" href="./assets/waterfront-harmony-2027.png" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./styles.css?v=202711"><script src="./site.js?v=202711" defer></script>
+<link rel="stylesheet" href="./styles.css?v=20261108c"><script src="./site.js?v=20261108c" defer></script>
+<link rel="stylesheet" href="./themes.css?v=20261108c">
 </head>
 <body>
 <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
@@ -28,9 +29,12 @@
   </div>
  </div>
 </header>
+<div id="petal-transition" aria-hidden="true"></div>
 <main id="main">
  <section class="hero" id="home" aria-labelledby="hero-title">
   <img class="hero-art" src="./assets/waterfront-harmony-2027.png" alt="Illustrated Porto Alegre waterfront at sunset, a Brazilian and Australian feast, flowers, an electric guitar and black boots on a chair." data-i18n-alt="heroAlt" width="1586" height="992" fetchpriority="high">
+  <img class="hero-art hero-art-au" src="./assets/waterfront-australia.png" alt="" aria-hidden="true" width="1586" height="992" decoding="async">
+  <div class="scene-effects" aria-hidden="true"><div class="sky-glow"></div><img class="scene-bird bird-brasil" src="./assets/hummingbird.svg" alt=""><img class="scene-bird bird-australia" src="./assets/kookaburra.svg" alt=""><div class="flight-path"><svg class="sky-plane" viewBox="0 0 100 50"><path fill="#f5dfae" stroke="#b59560" stroke-width=".7" d="M10 23 36 23 52 3 60 3 50 23 82 23Q99 24 89 29L49 31 34 46 27 46 35 31 15 30 5 17 11 17Z"/></svg><span></span></div></div>
   <div class="hero-shade" aria-hidden="true"></div>
   <div class="hero-copy">
    <p class="eyebrow" data-i18n="heroEyebrow">BRAZIL & AUSTRALIA, TOGETHER</p>
@@ -88,7 +92,7 @@
     <div class="rsvp-success" id="rsvp-success" hidden tabindex="-1"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M24 42 7 25C-5 12 12-2 24 12 36-2 53 12 41 25Z"/></svg><h4 data-i18n="successTitle">Your letter is on its way.</h4><p data-i18n="successText">Thank you for getting in touch. We can't wait to share more with you.</p><p class="success-signature">Bibi & Matt</p></div>
     <p class="letter-signature" data-i18n="letterSignature">With love, Bibi & Matt</p>
    </div>
-   <div class="envelope-front" aria-hidden="true"><div class="envelope-fold"></div></div>
+   <div class="envelope-front" aria-hidden="true"><div class="envelope-fold"></div><div class="envelope-postage"><img class="postage-brasil" src="./assets/stamp-brasil.svg" alt=""><img class="postage-australia" src="./assets/stamp-australia.svg" alt=""></div><div class="postmark"><span class="postmark-brasil">PORTO ALEGRE · BRASIL</span><span class="postmark-australia">BRISBANE · AUSTRALIA</span><span>♥ B &amp; M ♥</span><small>DEZ · 2027</small></div></div>
    <button class="envelope-trigger wax-seal" id="open-letter" type="button" aria-expanded="false" aria-controls="rsvp-letter"><span class="seal-monogram" aria-hidden="true">B &amp; M</span><span class="seal-words" data-i18n="openLetter">Click to Open</span></button>
   </div>
   <noscript><p class="noscript-message">Please enable JavaScript to open the RSVP letter. / Ative o JavaScript para abrir o convite.</p></noscript>

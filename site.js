@@ -203,7 +203,31 @@ function setLanguage(next, persist = true) {
  if (lastError) showError(lastError);
  if (persist) save('bm-language', next);
 }
+let petalTimer;
+function sweepPetals(next) {
+ const layer = document.querySelector('#petal-transition');
+ clearTimeout(petalTimer);
+ layer.replaceChildren();
+ const toggle = document.querySelector('#culture-switch');
+ toggle.classList.remove('is-switching');
+ if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+ const fragment = document.createDocumentFragment();
+ for (let i = 0; i < 28; i++) {
+  const petal = document.createElement('span');
+  petal.className = 'flying-petal ' + (next === 'australia' ? 'wattle-petal' : 'orchid-petal');
+  petal.style.setProperty('--y', ((i * 37) % 100) + 'vh');
+  petal.style.setProperty('--delay', (i % 7 * .065) + 's');
+  petal.style.setProperty('--size', (9 + i % 5 * 3) + 'px');
+  petal.style.setProperty('--drift', (i % 2 ? 18 : -16) + 'vh');
+  fragment.append(petal);
+ }
+ layer.append(fragment);
+ void toggle.offsetWidth;
+ toggle.classList.add('is-switching');
+ petalTimer = setTimeout(() => {layer.replaceChildren();toggle.classList.remove('is-switching');}, 2100);
+}
 function setTheme(next, persist = true) {
+ if (persist && next !== theme) sweepPetals(next);
  theme = next;
  document.documentElement.dataset.theme = next;
  document.querySelector('#culture-switch').setAttribute('aria-checked', String(next === 'australia'));

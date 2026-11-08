@@ -3,8 +3,8 @@ test('approved illustration, real details and readable desktop layout', async ({
  const errors=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto('/');
  await expect(page).toHaveTitle(/Bibi & Matt/);
- await expect(page.locator('.hero-art')).toBeVisible();
- expect(await page.locator('.hero-art').evaluate(i=>i.complete&&i.naturalWidth>1000)).toBe(true);
+ await expect(page.locator('.hero-art').first()).toBeVisible();
+ expect(await page.locator('.hero-art').first().evaluate(i=>i.complete&&i.naturalWidth>1000)).toBe(true);
  await expect(page.locator('#ceremony h3')).toHaveText('Paróquia São João Batista');
  await expect(page.locator('#ceremony .text-link')).toHaveAttribute('href','https://maps.app.goo.gl/K4VxHE4jRkmT7xyH6');
  await expect(page.locator('.date-note')).toContainText('confirmed');

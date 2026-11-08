@@ -1,0 +1,57 @@
+/* Two family perspectives, with Porto Alegre as the setting in both. */
+.hero .hero-art-au{position:absolute;inset:0;opacity:0;transition:opacity 1s ease;filter:none;pointer-events:none}
+html[data-theme=australia] .hero .hero-art-au{opacity:1}
+.scene-effects{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.sky-glow{position:absolute;inset:0;background:linear-gradient(180deg,#db75620b,transparent 55%);transition:background 1s}
+html[data-theme=australia] .sky-glow{background:radial-gradient(ellipse at 70% 45%,#f9bb5320,transparent 52%)}
+.scene-bird{position:absolute;width:8%;height:auto;filter:drop-shadow(0 2px 3px #190c2733);transition:opacity .7s,transform .9s}
+.bird-brasil{left:17%;top:30%;transform:rotate(-12deg);animation:bird-hover 3s ease-in-out infinite}
+.bird-australia{right:7%;top:43%;width:8.5%;opacity:0;transform:translateY(12px)}
+html[data-theme=australia] .bird-brasil{opacity:0}
+html[data-theme=australia] .bird-australia{opacity:1;transform:none}
+@keyframes bird-hover{50%{transform:translateY(-7px) rotate(-8deg)}}
+.flight-path{position:absolute;left:67%;right:1%;top:27%;height:10%;opacity:0;transition:opacity .6s;overflow:hidden}
+html[data-theme=australia] .flight-path{opacity:1}
+.sky-plane{position:absolute!important;width:19%!important;height:auto!important;top:35%;left:50%;filter:drop-shadow(0 1px 2px #183c4760);animation:flight 22s ease-in-out infinite;animation-play-state:paused}
+html[data-theme=australia] .sky-plane{animation-play-state:running}
+.flight-path>span{display:none}
+@keyframes flight{0%,100%{transform:translate(-200%,40%) scale(.8);opacity:.2}15%{opacity:.85}85%{opacity:.85}95%{transform:translate(260%,-60%) scale(.65);opacity:0}}
+.envelope-lining{background-color:#633047;background-image:url('./assets/lining-brasil.svg');background-size:105px;transition:background-color .7s}
+html[data-theme=australia] .envelope-lining{background-color:#264c45;background-image:url('./assets/lining-australia.svg');background-size:110px}
+.envelope-lid::after{content:"";position:absolute;inset:8px;background:linear-gradient(#f7e8d2c9,#f7e8d2dd),url('./assets/lining-brasil.svg') center/90px;clip-path:polygon(0 0,100% 0,50% 94%);opacity:.55}
+html[data-theme=australia] .envelope-lid::after{background-image:linear-gradient(#f7e8d2c9,#f7e8d2dd),url('./assets/lining-australia.svg')}
+.envelope-postage{position:absolute;right:25px;bottom:22px;width:77px;height:96px;transform:rotate(7deg)}
+.envelope-postage img{position:absolute;inset:0;width:100%;height:100%;transition:opacity .65s}
+.postage-australia{opacity:0}
+html[data-theme=australia] .postage-brasil{opacity:0}
+html[data-theme=australia] .postage-australia{opacity:1}
+.postmark{position:absolute;left:28px;bottom:28px;width:115px;height:77px;border:1px solid #7957477a;border-radius:50%;color:#795747b3;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-11deg);font:9px/1.8 var(--serif);letter-spacing:.06em}
+.postmark::after{content:"";position:absolute;inset:4px;border:1px solid #7957474a;border-radius:50%}
+.postmark small{font-size:9px}.postmark-australia{display:none}
+html[data-theme=australia] .postmark-brasil{display:none}
+html[data-theme=australia] .postmark-australia{display:block}
+/* The red wax keeps its natural poured edge, highlights and recessed lettering. */
+.envelope-trigger.wax-seal,html[data-theme=australia] .envelope-trigger.wax-seal{width:136px;height:136px;min-width:136px;bottom:70px;padding:26px 20px 32px;border:0;border-radius:44% 48% 45% 43%;background:transparent url('./assets/wax-red.svg') center/100% 100% no-repeat;box-shadow:none;color:#5b130f;gap:6px;filter:drop-shadow(0 2px 2px #70221c30)}
+.wax-seal .seal-monogram,html[data-theme=australia] .wax-seal .seal-monogram{font-size:25px;text-shadow:0 1px .7px #f79b7d,0 -1px .8px #57100d}
+.wax-seal .seal-words,html[data-theme=australia] .wax-seal .seal-words{max-width:83px;font-size:11px;text-shadow:0 1px .7px #ee8969,0 -1px .8px #59130d}
+.envelope-trigger.wax-seal:hover{filter:brightness(1.1) drop-shadow(0 3px 3px #70221c35)}
+.culture-switch.is-switching .switch-track{animation:switch-bloom .7s ease}
+.culture-switch.is-switching .switch-track span{box-shadow:0 0 10px #ffdd83}
+@keyframes switch-bloom{50%{box-shadow:0 0 0 9px #f5d48522;transform:scale(1.1)}}
+#petal-transition{position:fixed;inset:0;z-index:50;pointer-events:none;overflow:hidden;contain:strict}
+.flying-petal{position:absolute;left:-40px;top:var(--y);width:var(--size);height:calc(var(--size) * 1.35);border-radius:85% 10% 80% 20%;box-shadow:inset 1px 1px 2px #fff6df60,0 2px 4px #421c301a;animation:petal-sweep 1.55s var(--delay) cubic-bezier(.27,.45,.56,.9) both}
+.orchid-petal{background:linear-gradient(130deg,#edb9c3,#b74c7a 75%)}
+.wattle-petal{background:linear-gradient(130deg,#ffe797,#e7b52d 75%);border-radius:55% 45% 60% 40%;height:var(--size)}
+@keyframes petal-sweep{0%{transform:translate(0,0) rotate(0deg);opacity:0}7%{opacity:.9}92%{opacity:.85}100%{transform:translate(calc(100vw + 90px),var(--drift)) rotate(680deg);opacity:0}}
+@media(max-width:560px){
+ .hero .hero-art-au{inset:auto 0 0;height:auto}
+ .scene-effects{inset:auto 0 0;aspect-ratio:1586/992}
+ .scene-bird{width:11%}.bird-australia{width:11%;top:39%;right:7%}.bird-brasil{left:18%;top:29%}
+ .sky-plane{width:24%!important}
+ .envelope-trigger.wax-seal,html[data-theme=australia] .envelope-trigger.wax-seal{width:116px;height:116px;min-width:116px;bottom:45px;padding:22px 17px 27px;gap:4px}
+ .wax-seal .seal-monogram,html[data-theme=australia] .wax-seal .seal-monogram{font-size:22px}
+ .wax-seal .seal-words,html[data-theme=australia] .wax-seal .seal-words{font-size:10px;max-width:71px}
+ .envelope-postage{width:55px;height:69px;right:15px;bottom:17px}
+ .postmark{width:86px;height:62px;left:13px;bottom:21px;font-size:7px}.postmark small{font-size:8px}
+}
+@media(prefers-reduced-motion:reduce){.scene-bird,.sky-plane,.flying-petal{animation:none!important}.sky-plane{left:50%;top:35%;opacity:1}#petal-transition{display:none}}
