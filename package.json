@@ -1,0 +1,14 @@
+{
+  "name": "bibi-matt-wedding",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Bibi & Matt wedding website. Static HTML, CSS and JavaScript.",
+  "scripts": {
+    "test": "playwright test",
+    "check": "node --check site.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1"
+  }
+}
