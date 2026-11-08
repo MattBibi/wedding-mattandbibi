@@ -1,13 +1,15 @@
 # Bibi & Matt wedding website
 
-Public site: https://wedding.mattandbibi.com/
+Public site: https://mattbibi.github.io/wedding-mattandbibi/
+
+Planned custom domain: wedding.mattandbibi.com. Its DNS record was absent at publication. Add a Route53 CNAME record named `wedding` targeting `mattbibi.github.io`, then configure the custom domain in GitHub Pages settings. GitHub will recreate `CNAME`. Do not enable the domain before DNS exists, because that redirects the working Pages URL to an unresolved host.
 
 A static, responsive wedding website for Porto Alegre, Brazil, December 2028. Exact date and ceremony time remain unconfirmed.
 
 ## Editing and preview
 Open a local HTTP server from this folder, for example `python -m http.server 8080`.
 The site uses plain HTML, CSS and JavaScript. No build is required.
-GitHub Pages serves the `main` branch root. Preserve the existing `CNAME`.
+GitHub Pages serves the `main` branch root. The custom-domain `CNAME` is deliberately absent until DNS is configured.
 
 - `index.html`: content and accessible form structure
 - `styles.css`: responsive layout, two visual themes and animated envelope
