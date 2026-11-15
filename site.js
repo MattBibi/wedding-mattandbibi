@@ -177,7 +177,8 @@ function showError(key) {
  lastError = key;
  status.replaceChildren(document.createTextNode(t(key) + ' '));
  const link = document.createElement('a');
- link.href = 'mailto:souzabibi@hotmail.com,matt@mattcarolan.net?subject=' + encodeURIComponent('Bibi & Matt | Wedding RSVP');
+ const answers = Array.from(new FormData(form).entries()).filter(([key]) => !key.startsWith('_')).map(([key, value]) => key + ': ' + value).join('\n');
+ link.href = 'mailto:souzabibi@hotmail.com,matt@mattcarolan.net?subject=' + encodeURIComponent('Bibi & Matt | Wedding RSVP') + '&body=' + encodeURIComponent('December 2027 - Wedding RSVP\n\n' + answers);
  link.textContent = t('emailUs');
  status.append(link);
  status.classList.add('error');
@@ -262,6 +263,7 @@ function updateAttendance() {
  row.style.opacity = no ? '.45' : '1';
 }
 form.querySelectorAll('input[name="Attendance"]').forEach((input) => input.addEventListener('change',updateAttendance));
+updateAttendance();
 form.addEventListener('submit', async (event) => {
  event.preventDefault();
  if (isSubmitting || !form.reportValidity()) return;
@@ -285,10 +287,10 @@ form.addEventListener('submit', async (event) => {
      body:JSON.stringify(payload),signal:controller.signal
    });
    const result = await response.json();
-   if (!response.ok || (result.success !== true && result.success !== 'true')) throw new Error('Submission not acknowledged');
    if (/activat|confirm your email|check your email|verif/i.test(result.message || '')) {
      showError('activationText');
    } else {
+     if (!response.ok || (result.success !== true && result.success !== 'true')) throw new Error('Submission not acknowledged');
      form.hidden = true;
      const success = document.querySelector('#rsvp-success');
      success.hidden = false;

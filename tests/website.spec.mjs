@@ -116,3 +116,20 @@ test('reduced motion opens envelope and permits keyboard form use',async({page})
  await expect(page.locator('#rsvp-letter')).not.toHaveAttribute('inert','');
  await expect(page.locator('#guest-name')).toBeFocused();
  });
+
+test('activation rejection is specific even when service success is false',async({page})=>{
+ await page.route('https://formsubmit.co/ajax/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({success:false,message:'Please activate your form'})}));
+ await fillRsvp(page);await page.locator('.send-button').click();
+ await expect(page.locator('#form-status')).toContainText('awaiting activation');
+ await expect(page.locator('#guest-name')).toHaveValue('Website test - never emailed');
+ await expect(page.locator('#rsvp-success')).toBeHidden();
+});
+test('required name, email and attendance prevent requests',async({page})=>{
+ let requests=0;await page.route('https://formsubmit.co/ajax/**',route=>{requests++;return route.abort()});
+ await page.goto('/');await page.locator('#open-letter').click();
+ await expect(page.locator('#rsvp-letter')).not.toHaveAttribute('inert','');
+ await page.locator('.send-button').click();expect(requests).toBe(0);
+ await page.locator('#guest-name').fill('Validation test');await page.locator('#guest-email').fill('invalid-email');
+ await page.locator('.send-button').click();expect(requests).toBe(0);
+ await page.locator('#guest-email').fill('test@example.com');await page.locator('.send-button').click();expect(requests).toBe(0);
+});

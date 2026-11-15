@@ -56,3 +56,6 @@ html[data-theme=australia] .postmark-australia{display:block}
  .postmark{width:86px;height:62px;left:13px;bottom:21px;font-size:7px}.postmark small{font-size:8px}
 }
 @media(prefers-reduced-motion:reduce){.scene-bird,.sky-plane,.flying-petal{animation:none!important}.sky-plane{left:35%;top:40%;opacity:.85}#petal-transition{display:none}}
+
+/* Keep the branded aircraft legible inside the existing sky flight path. */
+.sky-plane{width:48%!important;top:12%}

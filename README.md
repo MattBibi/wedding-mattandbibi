@@ -33,3 +33,8 @@ GitHub Actions checks both languages and visual themes, preference persistence, 
 Exact wedding date, ceremony time, accommodation suggestions and practical travel information await confirmation. The announcement is for the church wedding only. The family table in the artwork is symbolic.
 
 The RSVP envelope stays sealed on scroll. Clicking or keyboard-activating the wax seal opens the flap, then reveals the letter. Reduced-motion preferences are respected.
+
+## Verification, 15 November 2026 (UTC)
+The live FormSubmit endpoint returned HTTP 200 with `success: "false"` and an explicit activation requirement. A clearly labelled test triggered a fresh activation email to the configured primary recipient. Delivery remains blocked until the owner activates that email. After activation, verify receipt in both configured inboxes. The client now handles activation messages even when `success` is false, preserves answers, and includes them in the direct-email fallback.
+
+Hero revisions: `assets/waterfront-harmony-fixed.png` and `assets/waterfront-australia-fixed.png` contain connected chair backrests and kiwi slices on all three pavlova tiers. The animated aircraft uses the Qantas logo sourced from https://www.qantas.com/icons/runway_brand_logo_master_qantas_horiz.svg.
