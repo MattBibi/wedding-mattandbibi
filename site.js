@@ -178,7 +178,7 @@ function showError(key) {
  status.replaceChildren(document.createTextNode(t(key) + ' '));
  const link = document.createElement('a');
  const answers = Array.from(new FormData(form).entries()).filter(([key]) => !key.startsWith('_')).map(([key, value]) => key + ': ' + value).join('\n');
- link.href = 'mailto:souzabibi@hotmail.com,matt@mattcarolan.net?subject=' + encodeURIComponent('Bibi & Matt | Wedding RSVP') + '&body=' + encodeURIComponent('December 2027 - Wedding RSVP\n\n' + answers);
+ link.href = 'mailto:souzabibiana@hotmail.com,matt@mattcarolan.net?subject=' + encodeURIComponent('Bibi & Matt | Wedding RSVP') + '&body=' + encodeURIComponent('December 2027 - Wedding RSVP\n\n' + answers);
  link.textContent = t('emailUs');
  status.append(link);
  status.classList.add('error');
@@ -282,7 +282,7 @@ form.addEventListener('submit', async (event) => {
  const controller = new AbortController();
  const timer = window.setTimeout(() => controller.abort(), 20000);
  try {
-   const response = await fetch('https://formsubmit.co/ajax/souzabibi@hotmail.com', {
+   const response = await fetch('https://formsubmit.co/ajax/souzabibiana@hotmail.com', {
      method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
      body:JSON.stringify(payload),signal:controller.signal
    });
