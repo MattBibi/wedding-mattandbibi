@@ -14,7 +14,7 @@ const translations = {
     "heroTitle": "Our favourite<br>kind of harmony.",
     "weddingCelebration": "OUR CHURCH WEDDING",
     "heroLocation": "Porto Alegre, Brazil",
-    "date": "December 2027",
+    "date": "January 2028",
     "dateNote": "Exact date to be confirmed",
     "heroCta": "A little letter for you",
     "detailsLabel": "At a glance",
@@ -27,7 +27,7 @@ const translations = {
     "storyEyebrow": "A LITTLE BRAZIL. A LITTLE AUSTRALIA.",
     "storyTitle": "A whole lot<br>of us.",
     "storyLead": "Two countries, a shared love of music, travel and the arts, and two families coming together.",
-    "storyText": "Bibi brings Brazil. Matt brings Australia. In December 2027, we would love you to join us for our church wedding at St. John the Baptist Parish in Porto Alegre. We will share the exact date, ceremony time and further details here as our plans take shape.",
+    "storyText": "Bibi brings Brazil. Matt brings Australia. In January 2028, we would love you to join us for our church wedding at St. John the Baptist Parish in Porto Alegre. We will share the exact date, ceremony time and further details here as our plans take shape.",
     "storyClosing": "Two families. Our favourite people. One wedding.",
     "heritageBrazil": "A little Brazilian warmth, wherever you're coming from.",
     "heritageAustralia": "A little Australian sunshine, all the way to Brazil.",
@@ -43,15 +43,15 @@ const translations = {
     "travelGettingTitle": "Getting to Porto Alegre",
     "travelGettingText": "For our guests travelling from Australia and elsewhere, we'll share planning information here as our plans take shape. Please wait for the confirmed wedding date before booking.",
     "travelStayingTitle": "A place to settle in",
-    "travelStayingText": "Suggestions for where to stay and how to get to the church will follow. For now, keep December 2027 in mind.",
+    "travelStayingText": "Suggestions for where to stay and how to get to the church will follow. For now, keep January 2028 in mind.",
     "travelCelebratingTitle": "More details to come",
     "travelCelebratingText": "This is an early announcement of our church wedding in Brazil. We will update this page with the confirmed date, ceremony time and practical information.",
     "letterEyebrow": "SOMETHING IN THE POST FOR YOU",
     "letterTitle": "We saved you a little letter.",
-    "letterIntro": "The exact date is still to come. For now, let us know if you hope to join us at the church in December 2027.",
+    "letterIntro": "The exact date is still to come. For now, let us know if you hope to join us at the church in January 2028.",
     "openLetter": "Click to Open",
     "letterSalutation": "Dear family & friends,",
-    "letterBody": "We would love you to join us for our church wedding in Porto Alegre in December 2027. While we confirm the exact date, send us a little note to let us know whether you hope to be there.",
+    "letterBody": "We would love you to join us for our church wedding in Porto Alegre in January 2028. While we confirm the exact date, send us a little note to let us know whether you hope to be there.",
     "nameLabel": "Your name",
     "emailLabel": "Email address",
     "attendanceLabel": "Do you hope to join us at the church?",
@@ -74,8 +74,8 @@ const translations = {
     "activationText": "Email delivery is awaiting activation. Your reply has not been confirmed. Please email us directly for now.",
     "footerLine": "Two countries. Our favourite people. One wedding.",
     "backTop": "Back to top",
-    "pageTitle": "Bibi & Matt | Porto Alegre · December 2027",
-    "pageDescription": "Join Bibi and Matt for their church wedding at St. John the Baptist Parish in Porto Alegre, Brazil, in December 2027. Exact date and further details to come."
+    "pageTitle": "Bibi & Matt | Porto Alegre · January 2028",
+    "pageDescription": "Join Bibi and Matt for their church wedding at St. John the Baptist Parish in Porto Alegre, Brazil, in January 2028. Exact date and further details to come."
   },
   "pt": {
     "skip": "Pular para o conteúdo",
@@ -90,7 +90,7 @@ const translations = {
     "heroTitle": "Nossa forma<br>favorita de harmonia.",
     "weddingCelebration": "NOSSO CASAMENTO NA IGREJA",
     "heroLocation": "Porto Alegre, Brasil",
-    "date": "Dezembro de 2027",
+    "date": "Janeiro de 2028",
     "dateNote": "Data exata a confirmar",
     "heroCta": "Uma cartinha para você",
     "detailsLabel": "Informações principais",
@@ -103,7 +103,7 @@ const translations = {
     "storyEyebrow": "UM POUCO DE BRASIL. UM POUCO DE AUSTRÁLIA.",
     "storyTitle": "Muito<br>de nós.",
     "storyLead": "Dois países, o amor pela música, pelas viagens e pelas artes, e duas famílias que se unem.",
-    "storyText": "Bibi traz o Brasil. Matt traz a Austrália. Em dezembro de 2027, vamos adorar ter vocês conosco no nosso casamento na Paróquia São João Batista, em Porto Alegre. Vamos compartilhar aqui a data exata, o horário da cerimônia e mais informações conforme os planos forem tomando forma.",
+    "storyText": "Bibi traz o Brasil. Matt traz a Austrália. Em janeiro de 2028, vamos adorar ter vocês conosco no nosso casamento na Paróquia São João Batista, em Porto Alegre. Vamos compartilhar aqui a data exata, o horário da cerimônia e mais informações conforme os planos forem tomando forma.",
     "storyClosing": "Duas famílias. Nossas pessoas favoritas. Um casamento.",
     "heritageBrazil": "Um pouco do calor brasileiro, de onde quer que você venha.",
     "heritageAustralia": "Um pouco do sol australiano, até aqui no Brasil.",
@@ -119,15 +119,15 @@ const translations = {
     "travelGettingTitle": "Chegando a Porto Alegre",
     "travelGettingText": "Para quem vem da Austrália ou de outros lugares, vamos compartilhar informações para a viagem conforme os planos forem tomando forma. Aguarde a confirmação da data antes de fazer reservas.",
     "travelStayingTitle": "Um cantinho para ficar",
-    "travelStayingText": "Em breve, teremos sugestões de hospedagem e informações sobre como chegar à igreja. Por enquanto, reserve dezembro de 2027 nos seus planos.",
+    "travelStayingText": "Em breve, teremos sugestões de hospedagem e informações sobre como chegar à igreja. Por enquanto, reserve janeiro de 2028 nos seus planos.",
     "travelCelebratingTitle": "Mais informações em breve",
     "travelCelebratingText": "Este é um primeiro anúncio do nosso casamento na igreja, no Brasil. Vamos atualizar esta página com a data confirmada, o horário da cerimônia e as informações práticas.",
     "letterEyebrow": "CHEGOU UMA CARTINHA PARA VOCÊ",
     "letterTitle": "Guardamos uma cartinha para você.",
-    "letterIntro": "A data exata ainda está por vir. Por enquanto, conte para nós se você espera estar conosco na igreja em dezembro de 2027.",
+    "letterIntro": "A data exata ainda está por vir. Por enquanto, conte para nós se você espera estar conosco na igreja em janeiro de 2028.",
     "openLetter": "Clique para Abrir",
     "letterSalutation": "Querida família e queridos amigos,",
-    "letterBody": "Vamos adorar ter vocês conosco no nosso casamento na igreja, em Porto Alegre, em dezembro de 2027. Enquanto confirmamos a data exata, deixem um recadinho para contar se esperam estar presentes.",
+    "letterBody": "Vamos adorar ter vocês conosco no nosso casamento na igreja, em Porto Alegre, em janeiro de 2028. Enquanto confirmamos a data exata, deixem um recadinho para contar se esperam estar presentes.",
     "nameLabel": "Seu nome",
     "emailLabel": "Seu e-mail",
     "attendanceLabel": "Você espera estar conosco na igreja?",
@@ -150,8 +150,8 @@ const translations = {
     "activationText": "O envio por e-mail aguarda ativação. Sua resposta ainda não foi confirmada. Por enquanto, envie um e-mail diretamente para nós.",
     "footerLine": "Dois países. Nossas pessoas favoritas. Um casamento.",
     "backTop": "Voltar ao início",
-    "pageTitle": "Bibi & Matt | Porto Alegre · Dezembro de 2027",
-    "pageDescription": "Participe do casamento de Bibi e Matt na Paróquia São João Batista, em Porto Alegre, Brasil, em dezembro de 2027. Data exata e mais informações em breve."
+    "pageTitle": "Bibi & Matt | Porto Alegre · Janeiro de 2028",
+    "pageDescription": "Participe do casamento de Bibi e Matt na Paróquia São João Batista, em Porto Alegre, Brasil, em janeiro de 2028. Data exata e mais informações em breve."
   }
 };
 let language = 'en';
@@ -178,7 +178,7 @@ function showError(key) {
  status.replaceChildren(document.createTextNode(t(key) + ' '));
  const link = document.createElement('a');
  const answers = Array.from(new FormData(form).entries()).filter(([key]) => !key.startsWith('_')).map(([key, value]) => key + ': ' + value).join('\n');
- link.href = 'mailto:souzabibiana@hotmail.com,matt@mattcarolan.net?subject=' + encodeURIComponent('Bibi & Matt | Wedding RSVP') + '&body=' + encodeURIComponent('December 2027 - Wedding RSVP\n\n' + answers);
+ link.href = 'mailto:souzabibiana@hotmail.com,matt@mattcarolan.net?subject=' + encodeURIComponent('Bibi & Matt | Wedding RSVP') + '&body=' + encodeURIComponent('January 2028 - Wedding RSVP\n\n' + answers);
  link.textContent = t('emailUs');
  status.append(link);
  status.classList.add('error');
@@ -276,7 +276,7 @@ form.addEventListener('submit', async (event) => {
  sendButton.querySelector('span').textContent = t('sending');
  const payload = Object.fromEntries(new FormData(form).entries());
  payload['Response language'] = language === 'pt' ? 'Português (Brasil)' : 'English';
- payload['Wedding date'] = 'December 2027 - exact date to be confirmed';
+ payload['Wedding date'] = 'January 2028 - exact date to be confirmed';
  payload._subject = 'Bibi & Matt | RSVP | ' + payload.name;
  if (payload.Attendance === 'No') payload['Number of guests'] = '0';
  const controller = new AbortController();

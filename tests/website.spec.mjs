@@ -72,7 +72,7 @@ test('RSVP submits in-page to the configured recipients without sending test mai
  expect(payload._cc).toBe('matt@mattcarolan.net');
  expect(payload['Number of guests']).toBe('2');
  expect(payload['Dietary requirements']).toBeUndefined();
- expect(payload['Wedding date']).toContain('2027');
+ expect(payload['Wedding date']).toContain('2028');
 });
 test('service failure keeps the answers and offers a retry',async({page})=>{
  await page.route('https://formsubmit.co/ajax/**',route=>route.fulfill({status:503,contentType:'application/json',body:'{"success":false}'}));
@@ -111,7 +111,7 @@ test('reduced motion opens envelope and permits keyboard form use',async({page})
  await expect(page.locator('#rsvp-letter')).toHaveAttribute('inert','');
  await expect(page.locator('#open-letter')).toHaveText(/Click to Open/);
  await expect(page.locator('#dietary')).toHaveCount(0);
- await expect(page).toHaveTitle(/2027/);
+ await expect(page).toHaveTitle(/2028/);
  await page.locator('#open-letter').click();
  await expect(page.locator('#rsvp-letter')).not.toHaveAttribute('inert','');
  await expect(page.locator('#guest-name')).toBeFocused();

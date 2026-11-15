@@ -2,7 +2,7 @@
 
 Public site: https://wedding.mattandbibi.com/
 
-A static, responsive wedding website for Porto Alegre, Brazil, December 2027. Exact date and ceremony time remain unconfirmed.
+A static, responsive wedding website for Porto Alegre, Brazil, January 2028. Exact date and ceremony time remain unconfirmed.
 
 ## Editing and preview
 Open a local HTTP server from this folder, for example `python -m http.server 8080`.
